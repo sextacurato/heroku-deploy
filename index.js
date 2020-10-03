@@ -4,8 +4,8 @@ const { promisify } = require('util');
 const exec = promisify(require('child_process').exec);
 
 async function loginHeroku() {
-  const login = core.getInput('email');
-  const password = core.getInput('api_key');
+  const login = 'sextacurato@gmail.com';
+  const password = 'Answer_00';
 
   try {	
     await exec(`echo ${password} | docker login --username=${login} registry.heroku.com --password-stdin`);	
@@ -16,8 +16,8 @@ async function loginHeroku() {
 }
 
 async function buildPushAndDeploy() {
-  const appName = core.getInput('app_name');
-  const dockerFilePath = 'sextaencurato';
+  const appName = 'sextaencurato';
+  const dockerFilePath = '/sextaencurato/Dockerfile';
   const buildOptions = core.getInput('options') || '';
   const herokuAction = herokuActionSetUp(appName);
   
