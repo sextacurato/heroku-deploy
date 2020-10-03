@@ -17,7 +17,7 @@ async function loginHeroku() {
 
 async function buildPushAndDeploy() {
   const appName = 'sextaencurato';
-  const dockerFilePath = '/sextaencurato/Dockerfile';
+  const dockerFilePath = 'sextaencurato';
   const buildOptions = core.getInput('options') || '';
   const herokuAction = herokuActionSetUp(appName);
   
